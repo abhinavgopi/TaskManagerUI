@@ -1,0 +1,34 @@
+<div class="container" style="width: 600px;background-color:lightgray">
+  <Div>
+    <h3>Update Task</h3>
+  </Div>
+  <br>
+  <form>
+    <div class="form-group">
+      Task
+      <input name="taskname" type="text" class="form-control" [(ngModel)]="item.TaskName">
+    </div>
+    <div class="form-group">
+      Priority
+      <input type="range" name="Priority" class="form-control" [(ngModel)]="item.Priority" min="1" max="30" step="1">
+    </div>
+    <div class="form-group">
+      Parent Task
+      <select [(ngModel)]="item.ParentTaskId" class="form-control" name="ParentTask">
+        <option [value]="item.TaskId" *ngFor="let item of list">{{item.TaskName}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      Start Date
+      <input type="text" name="StartDate" class="form-control" [(ngModel)]="item.StartDate">
+    </div>
+    <div class="form-group">
+      End Date
+      <input type="text" name="EndDate" class="form-control" [(ngModel)]="item.EndDate">
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn" (click)="Update()">Update</button>
+      <button type="reset" class="btn" (click)="Cancel()">Cancel</button>
+    </div>
+  </form>
+</div>

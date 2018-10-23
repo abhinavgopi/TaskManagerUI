@@ -1,0 +1,43 @@
+<div class="container" style="background-color:lightgray">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2>Add Task</h2>
+      <br>
+      <div class="form-group" style="text-align:left;">
+        <b>Task</b>
+        <input type="text" class="form-control" [(ngModel)]="item.TaskName" #taskname="ngModel" required>
+        <div *ngIf="taskname.invalid">
+          <span style="color:red">Task Name is Required.</span>
+        </div>
+      </div>
+      <div class="form-group" style="text-align:left;">
+        <b>Priority</b>
+        <input type="range" class="form-control" [(ngModel)]="item.Priority" min="1" max="30" step="1">
+      </div>
+      <div class="form-group" style="text-align:left;">
+        <b>Parent Task</b>
+        <select [(ngModel)]="item.ParentTaskId" class="form-control" name="ParentTask">
+          <option [value]="item.TaskId" *ngFor="let item of list">{{item.TaskName}}</option>
+        </select>
+      </div>
+      <div class="form-group" style="text-align:left;">
+        <b>Start Date</b>
+        <input type="Date" class="form-control" [(ngModel)]="item.StartDate" #startdate="ngModel" required>
+        <div *ngIf="startdate.invalid">
+          <span style="color:red">Start Date is Required.</span>
+        </div>
+      </div>
+      <div class="form-group" style="text-align:left;">
+        <b>End Date</b>
+        <input type="Date" class="form-control" [(ngModel)]="item.EndDate" #enddate="ngModel" required>
+        <div *ngIf="enddate.invalid">
+          <span style="color:red">End Date is Required.</span>
+        </div>
+      </div>
+      <div class="row" style="padding:3px;text-align:center">
+        <button type="button" class="btn btn-default" [disabled]="taskname.invalid || startdate.invalid || enddate.invalid" (click)="Add()">Add Task</button>
+        <button type="reset" class="btn btn-default" (click)="Reset()">Reset Task</button>
+      </div>
+    </div>
+  </div>
+</div>

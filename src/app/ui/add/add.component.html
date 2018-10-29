@@ -35,8 +35,8 @@
         </div>
       </div>
       <div class="row" style="padding:3px;text-align:center">
-        <button type="button" class="btn btn-default" [disabled]="taskname.invalid || startdate.invalid || enddate.invalid" (click)="Add()">Add Task</button>
-        <button type="reset" class="btn btn-default" (click)="Reset()">Reset Task</button>
+        <button type="button" class="btn btn-default" [disabled]="taskname.invalid || startdate.invalid || enddate.invalid" (click)="addTask()">Add Task</button>
+        <button type="reset" class="btn btn-default" (click)="reset()">Reset Task</button>
       </div>
     </div>
   </div>

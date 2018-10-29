@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class AddComponent implements OnInit {
   item: any;
   list: any;
-  PId: number;
   constructor(private _service: SharedService, private _route: Router) {
     this.item = new Task();
     this._service.GetAll().subscribe(data => {
@@ -22,12 +21,12 @@ export class AddComponent implements OnInit {
 
   ngOnInit() {
   }
-  Add() {
+  addTask() {
     this._service.AddTask(this.item)
       .subscribe(_ => this._route.navigateByUrl('view'), err => console.log(err));
   }
 
-  Reset() {
-    this.item = new Task();
+  reset() {
+    this.item = {};
   }
 }

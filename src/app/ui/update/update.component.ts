@@ -10,6 +10,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 })
 export class UpdateComponent implements OnInit {
   TaskId: number;
+  task: object;
   item: any;
   list: any;
   constructor(private _router: Router, private _active: ActivatedRoute, private _service: SharedService) { }

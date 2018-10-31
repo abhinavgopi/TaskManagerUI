@@ -1,9 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ViewComponent } from './view.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { FilterPipe } from '../../pipes/filter.pipe';
+import { HttpModule } from '@angular/http';
+import { ProviderAst } from '@angular/compiler';
 
 describe('ViewComponent', () => {
   let component: ViewComponent;
@@ -12,7 +11,7 @@ describe('ViewComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ViewComponent],
-      imports: [HttpClientModule, FormsModule, FilterPipe]
+      imports: [HttpModule, FormsModule]
     })
       .compileComponents();
   }));

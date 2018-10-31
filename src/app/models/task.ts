@@ -3,7 +3,7 @@ export class Task {
     TaskName: string;
     Priority: number;
     ParentTaskId: number;
-    ParentTask: string;
+    // ParentTask: string;
     StartDate: Date;
     EndDate: Date;
     IsEnded: boolean;
